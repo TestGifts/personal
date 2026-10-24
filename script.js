@@ -54,44 +54,9 @@ async function play() {
   }
 }
 
-function fitCrawl() {
-  const capsule = document.querySelector(".capsule");
-  const proverb = document.querySelector(".proverb");
-  if (!capsule || !proverb) return;
-
-  const room = capsule.clientWidth - 28;
-  let size = Math.min(28, Math.max(16, capsule.clientWidth * 0.046));
-  proverb.style.fontSize = `${size}px`;
-  while (proverb.scrollWidth > room && size > 13) {
-    size -= 0.5;
-    proverb.style.fontSize = `${size}px`;
-  }
-}
-
-async function startCrawl() {
-  const capsule = document.querySelector(".capsule");
-  const crawl = document.querySelector(".crawl");
-  if (!capsule || !crawl) return;
-
-  if (document.fonts?.ready) await document.fonts.ready;
-  fitCrawl();
-  capsule.classList.add("is-ready");
-
-  crawl.addEventListener("animationend", () => {
-    crawl.classList.add("is-done");
-  });
-
-  window.addEventListener("resize", () => {
-    fitCrawl();
-    if (!crawl.classList.contains("is-done")) return;
-    crawl.style.transform = "translateX(100%)";
-  });
-}
-
 if (reduced) {
   log.querySelectorAll(".preload").forEach((node) => node.classList.remove("preload"));
 } else {
   log.replaceChildren();
   play();
 }
-startCrawl();

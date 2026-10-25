@@ -3,7 +3,7 @@
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: SAMEORIGIN
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; img-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'sha256-88b4e11dbb2599f1ab10fcb6c3a91b15e5d6c1ebe70f410b93e66e97fc1739d3'; base-uri 'self'; form-action 'none'; frame-ancestors 'self'
+  Content-Security-Policy: default-src 'self'; img-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' 'sha256-15f62ed001385f0c9049037550aa999da1bff93348d374fc8216a71a14572915'; base-uri 'self'; form-action 'none'; frame-ancestors 'self'
 
 /
   Cache-Control: public, max-age=0, must-revalidate
